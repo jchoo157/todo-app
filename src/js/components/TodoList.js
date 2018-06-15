@@ -3,7 +3,7 @@ import Todo from '../components/Todo';
 
 export default class TodoList extends Component {
   displayTodos() {
-    const {todos, toggleTodo, deleteTodo} = this.props;
+    const {todos, toggleTodo, deleteTodo, editTodo, updateTodo} = this.props;
 
     return todos.map(todo => {
       return (
@@ -12,6 +12,8 @@ export default class TodoList extends Component {
           todo={todo} 
           toggleTodo={() => {toggleTodo(todo.id)}} 
           deleteTodo={() => {deleteTodo(todo.id)}} 
+          editTodo={() => {editTodo(todo.id)}} 
+          updateTodo={() => {updateTodo(todo.id)}} 
         />
       )
     })

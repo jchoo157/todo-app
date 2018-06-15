@@ -5,7 +5,8 @@ export const addTodo = (text) => {
     type: 'ADD_TODO',
     payload: {
       id: todoId++,
-      text: text
+      text: text,
+      editing: false
     }
   }
 }
@@ -13,6 +14,13 @@ export const addTodo = (text) => {
 export const toggleTodo = (id) => {
   return {
     type: 'TOGGLE_TODO',
+    id: id
+  }
+}
+
+export const editTodo = (id) => {
+  return {
+    type: 'EDIT_TODO',
     id: id
   }
 }

@@ -2,7 +2,7 @@ import TodoList from '../components/Todolist';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../actions/todos';
+import { toggleTodo, deleteTodo, editTodo, updateTodo } from '../actions/todos';
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -23,12 +23,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleTodo: (id) => {
-      dispatch(toggleTodo(id))
-    },
-    deleteTodo: (id) => {
-      dispatch(deleteTodo(id))
-    }
+    toggleTodo: (id) => dispatch(toggleTodo(id)),
+    deleteTodo: (id) => dispatch(deleteTodo(id)),
+    editTodo: (id) => dispatch(editTodo(id)),
+    updateTodo: (id) => dispatch(updateTodo(id))
   }
 }
 
