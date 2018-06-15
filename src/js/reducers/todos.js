@@ -4,9 +4,15 @@ const todos = (state = [], action) => {
       let todo = {
         id: action.id, 
         text: action.text, 
-        status: action.status
+        completed: action.completed
       }
       return [...state, todo]
+    case 'TOGGLE_TODO':
+      return state.map(todo => {
+        if (todo.id == action.id) {
+          {...todo, completed: !todo.completed}
+        }
+      })
     default:
       return state
   }
