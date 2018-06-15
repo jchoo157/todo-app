@@ -10,7 +10,9 @@ const todos = (state = [], action) => {
     case 'TOGGLE_TODO':
       return state.map(todo => {
         if (todo.id == action.id) {
-          {...todo, completed: !todo.completed}
+          return Object.assign({}, todo, {completed: !todo.completed})
+        } else {
+          return todo
         }
       })
     case 'DELETE_TODO':
@@ -18,8 +20,6 @@ const todos = (state = [], action) => {
       return copyState.filter(todo => {
         return todo.id != action.id
       })
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter
     default:
       return state
   }

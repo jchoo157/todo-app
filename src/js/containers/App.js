@@ -1,4 +1,5 @@
 import AddTodo from './AddTodo';
+import VisibleTodoList from './VisibleTodoList';
 
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
@@ -12,7 +13,10 @@ export default class App extends Component {
 
     return (
       <Provider store={store}>
-        <AddTodo />
+        <div>
+          <AddTodo />
+          <VisibleTodoList />
+        </div>
       </Provider>
     )
   }
