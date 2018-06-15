@@ -1,5 +1,5 @@
-import AddTodo from './AddTodo';
 import VisibleTodoList from './VisibleTodoList';
+import TasksInfoBar from '../components/TasksInfoBar';
 
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
@@ -10,11 +10,11 @@ let store = createStore(rootReducer)
 
 export default class App extends Component {
   render() {
-
     return (
       <Provider store={store}>
         <div>
-          <AddTodo />
+          <h1>Your tasks</h1>
+          <TasksInfoBar />
           <VisibleTodoList />
         </div>
       </Provider>
