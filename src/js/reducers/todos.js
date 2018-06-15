@@ -1,10 +1,11 @@
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
+      let payload = action.payload
       let todo = {
-        id: action.id, 
-        text: action.text, 
-        completed: action.completed
+        id: payload.id, 
+        text: payload.text, 
+        completed: payload.completed
       }
       return [...state, todo]
     case 'TOGGLE_TODO':

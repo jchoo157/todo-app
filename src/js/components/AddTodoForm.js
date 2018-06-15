@@ -7,7 +7,7 @@ export default class AddTodo extends Component {
 
     return(
       <div>
-        <form onSubmit={e => {submitTodo(input.value)}}>
+        <form onSubmit={e => {e.preventDefault(); submitTodo(input.value)}}>
           <input ref={node => {input = node}} defaultValue="Enter task name..."/>
           <button type="submit">Save</button>
         </form>
