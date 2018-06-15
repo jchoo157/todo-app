@@ -13,6 +13,13 @@ const todos = (state = [], action) => {
           {...todo, completed: !todo.completed}
         }
       })
+    case 'DELETE_TODO':
+      let copyState = [...state]
+      return copyState.filter(todo => {
+        return todo.id != action.id
+      })
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter
     default:
       return state
   }
