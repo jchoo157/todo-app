@@ -1,6 +1,8 @@
 # Simple Task - Todo Application
 View it live at https://simple-task-todo.herokuapp.com/
-![Simple Task](relative/path/to/img.jpg?raw=true "Simple Task")
+
+![Simple Task](https://github.com/jchoo157/todo-app/blob/update-readme-and-compress-images/public/images/todo-app.png)
+
 Stay on top of your busy schedule! This simple todo application allows you to create tasks and keep track of what you've completed.
 
 ### Installation instructions
@@ -12,6 +14,7 @@ You can also run `npm run build` and once it has built a new `bundle.js` file in
 ### Tech Stack
 - React-Redux
 - Node.js
+- Express.js
 - Javascript/ES6/ES7
 - CSS/SCSS
 - HTML5
