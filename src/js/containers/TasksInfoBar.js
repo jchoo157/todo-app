@@ -1,17 +1,24 @@
 import TasksInfoBar from '../components/TasksInfoBar';
 
 import { connect } from 'react-redux';
+import { setVisibilityFilter } from '../actions/visibilityFilter';
 
 const getActiveTodos = (todos) => {
-  console.log(todos)
   return todos.map(todo => {
-    return !todos.completed
+    return !todo.completed
   })    
 }
 
 const mapStateToProps = (state) => ({
   todos: state.todos,
-  getNumberOfActiveTodos: getActiveTodos(state.todos).length
+  getNumberOfActiveTodos: getActiveTodos(state.todos).length,
+  visibilityFilter: state.visibilityFilter,
 })
 
-export default connect(mapStateToProps, null)(TasksInfoBar)
+const mapDispatchToProps = (dispatch) => ({
+  setVisibilityFilter: (filter) => {
+    dispatch(setVisibilityFilter(filter))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TasksInfoBar)

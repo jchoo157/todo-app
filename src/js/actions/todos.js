@@ -6,7 +6,8 @@ export const addTodo = (text, editing) => {
     payload: {
       id: todoId++,
       text: text,
-      editing: editing || false
+      editing: editing || false,
+      completed: false
     }
   }
 }
