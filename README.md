@@ -1,7 +1,13 @@
 # Simple Task - Todo Application
 View it live at https://simple-task-todo.herokuapp.com/
 
-![Simple Task](https://github.com/jchoo157/todo-app/blob/update-readme-and-compress-images/public/images/todo-app.png)
+## Desktop View
+
+![Simple Task Desktop](https://github.com/jchoo157/todo-app/blob/update-readme-and-compress-images/public/images/simple-task-mobile.png)
+
+## Mobile View
+
+![Simple Task Mobile](https://github.com/jchoo157/todo-app/blob/update-readme-and-compress-images/public/images/simple-task-mobile.png)
 
 Stay on top of your busy schedule! This simple todo application allows you to create tasks and keep track of what you've completed.
 
