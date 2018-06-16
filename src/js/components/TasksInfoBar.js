@@ -6,12 +6,13 @@ export default class TasksInfoBar extends Component {
     const {getNumberOfActiveTodos, todos, setVisibilityFilter, visibilityFilter} = this.props;
     let allTasksCompleted = getNumberOfActiveTodos <= 0 ? true : false
     let allDone = (allTasksCompleted && todos.length > 0) ? 'completed-all-tasks' : ''
-    let allDoneText = allTasksCompleted ? 'All tasks completed' : 'Complete all tasks'
-    let mainText = todos.length <= 0 ? 'Create your first task!' : allDoneText
+    let introText = allTasksCompleted ? 'All tasks completed' : 'Complete all tasks'
+    let tasksProgressText = (allTasksCompleted && todos.length > 0) ? 'Well done!' : `You have ${getNumberOfActiveTodos} active tasks`
+    let mainText = todos.length <= 0 ? 'Create your first task!' : introText
     return(
       <div id="tasks_info_bar" className={allDone}>
         <h3>{mainText}</h3>
-        <p>You have {getNumberOfActiveTodos} active tasks</p>
+        <p>{tasksProgressText}</p>
         <div className="filters-container">
           <Link 
             visibilityFilter={visibilityFilter} 
