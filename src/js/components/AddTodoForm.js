@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 
 export default class AddTodo extends Component {
   render() {
-    const {submitTodo} = this.props
-    let input
-
+    const {todo, submitTodo, updateTodo, deleteTodo} = this.props
+    let submitMethod = todo.editing ? updateTodo : submitTodo
     return(
-      <div>
-        <form onSubmit={e => {submitTodo(input.value)}}>
-          <input ref={node => {input = node}} defaultValue="Enter task name..."/>
-          <button type="submit">Save</button>
+      <div className="todo-form vertical-align">
+        <form className={todo.text ? 'pad-top-bot' : ''} onSubmit={e => {e.preventDefault(); submitMethod(todo.id, this.input.value)}}>
+          <input ref={node => {this.input = node}} className="task-input" placeholder="Enter task name..." defaultValue={todo.text} required={true} autoFocus={true}/>
+          <div className="edit-options">
+            <button className="task-save-btn" type="submit">Save</button>
+            {!todo.text ? <button className="cancel-todo" onClick={deleteTodo}>Cancel</button> : null}
+          </div>
         </form>
       </div>
     )
