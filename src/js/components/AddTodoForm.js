@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 
 export default class AddTodo extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      inputValue: ''
-    }
-  }
-
-  updateInputValue(e) {
-    this.setState({inputValue: e.target.value})
-  }
-
   render() {
-    const {todo, submitTodo, updateTodo} = this.props
+    const {todo, submitTodo, updateTodo, deleteTodo} = this.props
     let submitMethod = todo.editing ? updateTodo : submitTodo
-    let input
     return(
-      <div className="todo-form">
-        <form onSubmit={e => {e.preventDefault(); submitMethod(todo.id, this.state.inputValue)}}>
-          <input className="task-input" onChange={e => {this.updateInputValue(e)}} placeholder="Enter task name..." defaultValue={todo.text}/>
-          <button className="task-save-btn" type="submit">Save</button>
+      <div className="todo-form vertical-align">
+        <form className={todo.text ? 'pad-top-bot' : ''} onSubmit={e => {e.preventDefault(); submitMethod(todo.id, this.input.value)}}>
+          <input ref={node => {this.input = node}} className="task-input" placeholder="Enter task name..." defaultValue={todo.text}/>
+          <div className="edit-options">
+            <button className="task-save-btn" type="submit">Save</button>
+            {!todo.text ? <div className="cancel-todo" onClick={deleteTodo}>Cancel</div> : null}
+          </div>
         </form>
       </div>
     )

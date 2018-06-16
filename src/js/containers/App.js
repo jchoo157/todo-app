@@ -1,5 +1,6 @@
 import VisibleTodoList from './VisibleTodoList';
-import TasksInfoBar from '../components/TasksInfoBar';
+import TasksInfoBar from './TasksInfoBar';
+import HeaderBar from '../components/HeaderBar';
 
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
@@ -13,9 +14,12 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <h1>Your tasks</h1>
-          <TasksInfoBar />
-          <VisibleTodoList />
+          <HeaderBar />
+          <div className="app-body">
+            <h1>Your tasks</h1>
+            <TasksInfoBar />
+            <VisibleTodoList />
+          </div>
         </div>
       </Provider>
     )
