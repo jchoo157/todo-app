@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open /dist/index.html --hot",
-    "build": "webpack --mode production",
-    "postinstall": "webpack -p",
+    "postinstall": "webpack --mode production",
     "start": "node server.js"
   },
   "author": "",
