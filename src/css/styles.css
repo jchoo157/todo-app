@@ -462,7 +462,7 @@ $dark-gray: #4F4F4F;
 
 }
 
-@media(max-width: 413px) {
+@media(max-width: 414px) {
   .overlay {
     display: none !important;
   }
