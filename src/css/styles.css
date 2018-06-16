@@ -64,7 +64,7 @@ $dark-gray: #4F4F4F;
 #tasks_info_bar {
   background: $light-blue;
   padding: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
   margin-bottom: 30px;
 
   &.completed-all-tasks {
