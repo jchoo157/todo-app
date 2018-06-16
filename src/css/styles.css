@@ -47,7 +47,8 @@ $dark-gray: #4F4F4F;
     h5 {
       float: right;
       font-weight: 100;
-      font-size: 1em;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
       margin: 0 20px 0 0;
     }
   }
@@ -66,7 +67,7 @@ $dark-gray: #4F4F4F;
   border-radius: 2px;
   margin-bottom: 30px;
 
-  .completed-all-tasks {
+  &.completed-all-tasks {
     background: $light-green;
   }
 
@@ -87,20 +88,27 @@ $dark-gray: #4F4F4F;
 
   .filters-container {
     display: inline;
+    overflow: hidden;
 
     > div {
       margin-left: 10px;
       float: right;
       color: white;
-      padding: 5px;
+      padding: 2px 5px;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bolder;
+      font-size: 0.9em;
     }
 
     .active-link {
       background: white;
       color: $light-blue;
+    }
+
+    @media(max-width: 435px) {
+      display: block;
+      padding-top: 15px;
     }
   }
 }
@@ -166,7 +174,7 @@ $dark-gray: #4F4F4F;
 
   .todo-content {
     width: 100%;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
     position: relative;
 
     .sprite {
@@ -241,7 +249,7 @@ $dark-gray: #4F4F4F;
         }
       }
     }
-    @media(max-width: 415px) {
+    @media(max-width: 500px) {
       padding: 30px;
     }
   }
@@ -338,6 +346,9 @@ $dark-gray: #4F4F4F;
       display: flex;
       flex-direction: row;
       width: 100%;
+      justify-content: center;
+      align-items: center;
+      min-height: 46px;
 
       .task-input {
         flex: 4;
@@ -345,6 +356,7 @@ $dark-gray: #4F4F4F;
         font-size: 1em;
         width: 100px;
         font-family: arial;
+        color: #4d4d4d;
 
         &::placeholder {
           color: $light-gray;
@@ -381,6 +393,7 @@ $dark-gray: #4F4F4F;
           cursor: pointer;
           margin-top: 10px;
           font-weight: bolder;
+          background: none;
 
           &:hover {
             opacity: 0.7;
@@ -398,6 +411,8 @@ $dark-gray: #4F4F4F;
         }
 
         .edit-options {
+          width: 100%;
+
           .task-save-btn, .cancel-todo {
             display: inline-block;
             padding: 5px;
